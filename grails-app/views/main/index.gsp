@@ -8,27 +8,25 @@
 <body>
 <div class="content">
     <div class="jumbotron">
-        ELOMELO JOł PL
+        <p>Witaj na portalu do sprawdzania zanieczyszczeń powietrza i smogu!</p>
     </div>
 
     <div class="jumbotron">
-        ZIOMEK POZIOMEK JOJO
+        <g:if test="${session?.user}">
+            <p>Możesz przeglądać wszystkie dostępne stacje w polsce!</p>
+            <p>Zacznij od pełnego wyświetlenia listy stacji i zobacz szczegóły wybranej</p>
+        </g:if>
+        <g:else>
+            <p>Zaloguj się do portalu aby korzystać z niego w pełni!</p>
+        </g:else>
     </div>
 
     <div class="jumbotron">
-        ZIOMEK POZIOMEK JOJO
+        <p>Utwórz sobie listę ulubionych stacji w profilu!</p>
     </div>
 
     <div class="jumbotron">
-        ZIOMEK POZIOMEK JOJO
-    </div>
-
-    <div class="jumbotron">
-        ZIOMEK POZIOMEK JOJO
-    </div>
-
-    <div class="jumbotron">
-        ZIOMEK POZIOMEK JOJO
+        Pozdro!
     </div>
 </div>
 </body>

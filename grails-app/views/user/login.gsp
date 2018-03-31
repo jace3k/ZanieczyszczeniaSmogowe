@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div class="content">
+<div class="content centered">
     <g:form action="login">
         <fieldset>
             <legend>Zaloguj się</legend>

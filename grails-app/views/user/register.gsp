@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<div class="content">
+<div class="content centered">
     <g:form controller="user" action="register" method="post" name="register">
         <fieldset>
             <legend>Zarejestruj się</legend>

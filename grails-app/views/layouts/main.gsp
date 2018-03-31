@@ -33,8 +33,6 @@
                     <li class="nav-item"><g:link class="nav-link" controller="station">Lista stacji</g:link></li>
                     <li class="nav-item"><g:link class="nav-link" controller="user" action="logout">Wyloguj</g:link></li>
                 </g:else>
-
-
             </ul>
         </div>
     </nav>
