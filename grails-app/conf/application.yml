@@ -89,7 +89,7 @@ hibernate:
         use_second_level_cache: false
         use_query_cache: false
 dataSource:
-    dbCreate: create-drop
+    dbCreate: update
     url: jdbc:postgresql://ec2-54-83-62-190.compute-1.amazonaws.com:5432/d4n97rolc3rbf3
     pooled: true
     jmxExport: true
