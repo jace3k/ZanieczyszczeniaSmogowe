@@ -46,4 +46,9 @@ class UserController {
         session.invalidate()
         redirect(controller: 'main')
     }
+
+    def  profile() {
+        print 'profil'
+        [user: session.user]
+    }
 }
