@@ -23,6 +23,8 @@ apply plugin:"org.grails.grails-gsp"
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -60,6 +62,8 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     compile "org.grails:grails-datastore-rest-client"
     compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+
+    compile 'org.postgresql:postgresql:42.2.2'
 }
 
 bootRun {

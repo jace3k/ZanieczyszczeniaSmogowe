@@ -29,7 +29,7 @@ class UserController {
 
             def user = new User(params)
             user.passwordHashed = user.password.encodeAsMD5()
-            if(user.save()) {
+            if(user.save(flush: true)) {
                 session.user = user
                 flash.message = 'Konto założone pomyślnie'
                 forward(controller: 'main')
