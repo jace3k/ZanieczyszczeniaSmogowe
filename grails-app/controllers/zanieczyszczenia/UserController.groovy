@@ -49,7 +49,7 @@ class UserController {
 
     def  profile() {
         print 'profil'
-        if(!session.user.stations.isEmpty()) {
+        if(!session.user.stations?.isEmpty()) {
             [stations:session.user.stations]
         } else {
             [:]
