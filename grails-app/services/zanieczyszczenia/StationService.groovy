@@ -36,7 +36,7 @@ class StationService {
                             cityDistrictName: element["city"]["commune"]["districtName"],
                             cityProvinceName: element["city"]["commune"]["provinceName"],
                             addressStreet: element["addressStreet"]
-                    ).save()
+                    ).save(flush: true)
                 }
             } else {
                 return null

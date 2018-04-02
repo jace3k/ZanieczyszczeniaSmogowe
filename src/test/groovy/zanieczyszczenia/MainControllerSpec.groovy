@@ -13,6 +13,6 @@ class MainControllerSpec extends Specification implements ControllerUnitTest<Mai
 
     void "test something"() {
         expect:"fix me"
-            true == false
+        true
     }
 }

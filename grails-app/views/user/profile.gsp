@@ -7,10 +7,23 @@
 
 <body>
     <div class="content">
-        <h1>Witaj ${user.firstName}, to twój profil.</h1>
+        <h1>Witaj ${session.user.firstName}, to twój profil.</h1>
 
-        <div class="jumbotron">Jeszcze nic tutaj nie ma</div>
-
+        <div class="jumbotron">Witaj na swoim profilu!</div>
+        <g:if test="${stations}">
+        <div>
+            Lista ulubionych stacji:
+            <br />
+            <div class="list-group">
+            <g:each in="${stations}" var="station">
+                <div class="list-group-item list-group-item-action">
+                    <g:link action='show' controller="station" id="${station.stationId}">${station.stationName}</g:link>
+                    <g:link controller="user" action="remFavorites" id="${station.stationId}"><button class="btn btn-outline-secondary">-</button></g:link>
+                </div>
+            </g:each>
+            </div>
+        </div>
+        </g:if>
     </div>
 </body>
 </html>

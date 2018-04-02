@@ -20,9 +20,17 @@
 
         <div class="list-group">
             <g:each in="${stationList}" var="station" status="item">
-
-                    <g:link action='show' class="list-group-item list-group-item-action" id="${station.stationId}">${station.stationName}</g:link>
-
+                <div class="list-group-item list-group-item-action">
+                    <g:link action='show'  id="${station.stationId}">${station.stationName}</g:link>
+                    <g:if test="${session?.user}">
+                        <g:if test="${!session?.user?.stations?.find {it.stationId == station.stationId}}">
+                            <g:link controller="user" action="addFavorites" id="${station.stationId}"><button class="btn btn-outline-primary">+</button></g:link>
+                        </g:if>
+                        <g:else>
+                            <g:link controller="user" action="remFavorites" id="${station.stationId}"><button class="btn btn-outline-secondary">-</button></g:link>
+                        </g:else>
+                    </g:if>
+                </div>
             </g:each>
         </div>
     </g:if>

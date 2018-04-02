@@ -18,7 +18,7 @@ class StationController {
         def station = Station.findByStationId(id).stationName
         def resp = service.getStationSensors(id)
         if(resp) {
-            [stationProperties:resp, stationName:station]
+            [stationProperties:resp, stationName:station, stationId:id]
         } else {
             flash.message = "Błąd. Spróbuj ponownie za chwilę"
             [:]

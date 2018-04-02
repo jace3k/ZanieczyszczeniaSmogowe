@@ -6,6 +6,8 @@ class User {
     String password
     String passwordHashed
 
+    static hasMany = [stations: Station]
+
     static transients = ['password']
 
     static constraints = {

@@ -49,6 +49,54 @@ class UserController {
 
     def  profile() {
         print 'profil'
-        [user: session.user]
+        if(!session.user.stations.isEmpty()) {
+            [stations:session.user.stations]
+        } else {
+            [:]
+        }
+    }
+
+    def addFavorites() {
+        print params.id
+        if(session?.user) {
+            Station station = Station.findByStationId(params.id as int)
+            User user = session.user
+            print 'user: '
+            println user.firstName
+            user.addToStations(station)
+            if(user.save(flush: true)) {
+                flash.message = "Pomyślnie dodano ${station.stationName} do ulubionych"
+                //redirect(controller: 'station')
+                redirect(uri: request.getHeader('referer') )
+            } else {
+                flash.message = "Nie udało się dodać"
+                redirect(controller: 'station')
+            }
+        } else {
+            flash.message = 'Nie jesteś zalogowany.'
+            redirect(controller: 'station')
+        }
+    }
+
+    def remFavorites() {
+        print 'usuwanie o id: '
+        println params.id
+        if(session?.user) {
+            User user = session.user
+            Station station = user.stations.find {it.stationId == params.id as int}
+            user.removeFromStations(station)
+
+            if(user.save(flush: true)){
+                flash.message = "Pomyślnie usunięto ${station.stationName} z ulubionych"
+                //redirect(controller: 'station')
+                redirect(uri: request.getHeader('referer') )
+            } else {
+                flash.message = "Nie udało się usunąć"
+                redirect(controller: 'station')
+            }
+        } else {
+            flash.message = 'Nie jesteś zalogowany.'
+            redirect(controller: 'station')
+        }
     }
 }
