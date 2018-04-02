@@ -45,9 +45,11 @@
 
     <g:layoutBody/>
 
-    <div class="footer" role="contentinfo">
-        TI! Apka webowa stworzona na potrzeby edukacyjne.
-    </div>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            TI! Apka webowa stworzona na potrzeby edukacyjne.
+        </div>
+    </footer>
 
     <asset:javascript src="application.js"/>
 

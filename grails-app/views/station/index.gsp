@@ -15,19 +15,20 @@
 <body>
 
 <div class="content">
+    <h1>Stacje</h1>
+    <g:if test="${stationList}">
 
-    <g:if test="${data}">
-        <h1>Stacje</h1>
-        <ul class="list-group">
-            <g:each in="${data}" var="station" status="item">
-                <li class="list-group-item">
-                    <div>
-                    <g:link action='show' id="${station.id}" class="btn btn-default">${station.stationName}</g:link>
-                    </div>
-                </li>
+        <div class="list-group">
+            <g:each in="${stationList}" var="station" status="item">
+
+                    <g:link action='show' class="list-group-item list-group-item-action" id="${station.stationId}">${station.stationName}</g:link>
+
             </g:each>
-        </ul>
+        </div>
     </g:if>
+    <g:else>
+        <p></p>
+    </g:else>
 </div>
     <br />
     <br />

@@ -1,7 +1,6 @@
 package zanieczyszczenia
 
 class MainController {
-    MainService service = new MainService()
 
     def index() {
         // pobieram plik z wszystkimi danymi, potem jak ktoś kliknie w daną stacje
@@ -10,9 +9,6 @@ class MainController {
         // a przed tym sprawdzam czy nie ma już w bazie - jak jest to wywalam
     }
 
-    def station(int id) {
-        id ? [station_properties:service.getWithID(id)] : [data:service.getData()]
-    }
 
     def about() {
 

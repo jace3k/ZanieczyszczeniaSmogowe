@@ -6,10 +6,14 @@
 </head>
 
 <body>
-<g:if test="${station_properties}">
-    ${station_properties}
-    <br/>
-    <g:link class="btn btn-block bg-info" action="index">Back</g:link>
+<div class="content">
+<g:if test="${stationProperties}">
+    <h1>${stationName}</h1>
+    <g:each in="${stationProperties}" var="sensor">
+        <div class="jumbotron">Czujnik: ${sensor.id} - ${sensor.param.paramName} - ${sensor.param.paramCode} </div>
+    </g:each>
 </g:if>
+    <g:link action="index" ><button type="button" class="btn btn-outline-dark">Back</button></g:link>
+</div>
 </body>
 </html>
