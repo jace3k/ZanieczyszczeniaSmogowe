@@ -23,7 +23,7 @@
                 <div class="list-group-item list-group-item-action">
                     <g:link action='show'  id="${station.stationId}">${station.stationName}</g:link>
                     <g:if test="${session?.user}">
-                        <g:if test="${!session?.user?.stations?.find {it.stationId == station.stationId}}">
+                        <g:if test="${!favoriteStations.find {it.stationId == station.stationId}}">
                             <g:link controller="user" action="addFavorites" id="${station.stationId}"><button class="btn btn-outline-primary">+</button></g:link>
                         </g:if>
                         <g:else>

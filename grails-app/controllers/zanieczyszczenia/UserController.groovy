@@ -59,13 +59,12 @@ class UserController {
         print params.id
         if(session?.user) {
             Station station = Station.findByStationId(params.id as int)
-            User user = session.user
+            User user = User.findById(session.user.id as long)
             print 'user: '
             println user.firstName
             user.addToStations(station)
             if(user.save(flush: true)) {
                 flash.message = "Pomyślnie dodano ${station.stationName} do ulubionych"
-                //redirect(controller: 'station')
                 redirect(uri: request.getHeader('referer') )
             } else {
                 flash.message = "Nie udało się dodać"
@@ -81,7 +80,7 @@ class UserController {
         print 'usuwanie o id: '
         println params.id
         if(session?.user) {
-            User user = session.user
+            User user = User.findById(session.user.id as long)
             Station station = user.stations.find {it.stationId == params.id as int}
             user.removeFromStations(station)
 
