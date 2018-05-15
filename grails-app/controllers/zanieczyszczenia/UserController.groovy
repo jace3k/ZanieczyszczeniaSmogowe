@@ -26,7 +26,6 @@ class UserController {
 
     def register() {
         if (request.method == 'POST') {
-
             def user = new User(params)
             user.passwordHashed = user.password.encodeAsMD5()
             if(user.save(flush: true)) {
@@ -48,9 +47,9 @@ class UserController {
     }
 
     def  profile() {
-        print 'profil'
-        if(!session.user.stations?.isEmpty()) {
-            [stations:session.user.stations]
+        def user = User.findById(session.user.id as long)
+        if(user) {
+            [stations:user.getStations()]
         } else {
             [:]
         }
