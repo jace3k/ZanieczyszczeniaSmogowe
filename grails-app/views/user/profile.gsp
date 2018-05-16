@@ -7,7 +7,7 @@
 
 <body>
     <div class="content">
-        <h1>Witaj ${session.user.firstName}, to twój profil.</h1>
+        <h1>Witaj ${session.user.firstName}, to twój profil. Twoje miasto: ${session.user.getLocalization()}</h1>
 
         <div class="jumbotron">Witaj na swoim profilu!</div>
         <g:if test="${stations}">

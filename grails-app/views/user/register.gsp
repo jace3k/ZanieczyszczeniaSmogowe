@@ -21,7 +21,7 @@
             <g:passwordField name="password" /><br />
 
             <label>Miejsce zamieszkania</label><br />
-            <g:passwordField name="localization" /><br /><br />
+            <g:textField name="localization" /><br /><br />
 
             <g:submitButton name="submit" value="Utwórz konto" />
         </fieldset>

@@ -32,6 +32,7 @@
                     <li class="nav-item"><g:link class="nav-link" controller="user" action="profile">Lista ulubionych</g:link></li>
                     <li class="nav-item"><g:link class="nav-link" controller="station">Wyszukiwarka</g:link></li>
                     <li class="nav-item"><g:link class="nav-link" controller="user" action="logout">Wyloguj</g:link></li>
+                    <li class="nav-item"><g:link class="nav-link" controller="station" action="mapping">Mapa</g:link></li>
                 </g:else>
             </ul>
         </div>

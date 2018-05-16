@@ -4,7 +4,7 @@ class StationController {
     StationService service = new StationService()
 
     def index() {
-        def user = User.findById(session.user.id)
+        def user = User.findById(session.user.id as long)
         def stations = Station.findAll()
         def favs = user.getStations()
         if (stations) {
@@ -27,6 +27,10 @@ class StationController {
         }
 
 
+    }
+
+    def mapping() {
+        [:]
     }
 
     def refresh() {
