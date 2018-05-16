@@ -18,7 +18,10 @@
             <g:textField name="username" /><br />
 
             <label>Hasło</label><br />
-            <g:passwordField name="password" /><br /><br />
+            <g:passwordField name="password" /><br />
+
+            <label>Miejsce zamieszkania</label><br />
+            <g:passwordField name="localization" /><br /><br />
 
             <g:submitButton name="submit" value="Utwórz konto" />
         </fieldset>
